@@ -44,7 +44,7 @@ private
   def install_plugins
     instrument "rails3.install_plugins" do
       return false if bundler.has_gem?('rails_12factor')
-      plugins = {"rails_log_stdout" => "rails_stdout_logging", "rails3_serve_static_assets" => "rails_serve_static_assets" }.
+      plugins = {"rails3_serve_static_assets" => "rails_serve_static_assets" }.
                  reject { |plugin, gem| bundler.has_gem?(gem) }
       return false if plugins.empty?
       plugins.each do |plugin, gem|
