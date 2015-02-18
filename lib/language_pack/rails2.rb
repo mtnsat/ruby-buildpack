@@ -45,7 +45,8 @@ class LanguagePack::Rails2 < LanguagePack::Ruby
 
   def compile
     instrument "rails2.compile" do
-      install_plugins
+      # XXX(dmauldin): we're just fine without the plugins, thanks
+      # install_plugins
       super
     end
   end
